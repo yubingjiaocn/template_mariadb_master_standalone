@@ -423,9 +423,16 @@ name=Extra Packages for Enterprise Linux 7 - \$basearch
 baseurl=http://9.181.26.145/repo/epel/7/\$basearch
 enabled=1
 gpgcheck=0
+[mariadb]
+name=Mariadb 10
+baseurl=http://9.111.97.171:19999/10.1/rhel7-amd64
+enabled=1
+gpgcheck=0
+
 EOR
     yum makecache
     service firewalld stop
+    setenforce 0
 
 EOF
   }
