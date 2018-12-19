@@ -505,7 +505,8 @@ resource "camc_softwaredeploy" "Node01_mariadb" {
         "prefer_os_package": "true"
       },
       "mysqld": {
-        "port": "${var.Node01_mariadb_port}"
+        "port": "${var.Node01_mariadb_port}",
+        "bind_address": "0.0.0.0"
       },
       "replication": {
         "server_id": "${var.Node01_mariadb_server_id}",
