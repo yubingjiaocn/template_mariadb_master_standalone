@@ -586,6 +586,7 @@ EOF
 
   provisioner "remote-exec" {
     inline = [
+      "mysqladmin -uroot password ${var.Node01_mariadb_root_password}",
       "mysql -uroot -p${var.Node01_mariadb_root_password} < master_start.sql"
     ]
   }
